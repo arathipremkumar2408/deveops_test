@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: ["main"]
   workflow_dispatch:
+    inputs: 
+      environment:
+        description: "Enivronment to testa against"
+        type: string
+        required: true
+      
 
 jobs:
   build:
