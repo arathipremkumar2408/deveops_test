@@ -13,7 +13,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
       run: |
-        PR_NUMBER = ${{ github.event.pull_request.number }}
+        PR_NUMBER=${{ github.event.pull_request.number }}
         curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
         -d '{"body": "Thankyou for your contribution!"}' \
         https://api.github.com/repos/arathipremkumar2408/deveops_test/issues/$PR_NUMBER/comments
