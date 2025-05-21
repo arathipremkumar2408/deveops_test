@@ -17,7 +17,7 @@ jobs:
       with:
         repository: arathipremkumar2408/test2
         token: ${{secrets.GHPAT}}
-        patch: other-repo
+        path: other-repo
 
     - name: Set up python
       uses: actions/setup-python@v2
