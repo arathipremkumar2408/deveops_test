@@ -26,4 +26,5 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
+      - run: echo ${{ inputs.environment }}
         
