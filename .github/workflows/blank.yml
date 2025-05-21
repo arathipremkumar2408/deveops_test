@@ -7,6 +7,13 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+    inputs: 
+      environment:
+        description: "Enivronment to testa against"
+        type: string
+        required: true
+      
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,4 +27,6 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
+
+      - run: echo ${{ inputs.environment }}
         
