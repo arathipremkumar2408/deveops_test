@@ -1,0 +1,27 @@
+name: Execute python script
+on: 
+  workflow_call:
+jobs:
+  run-script:
+    environment: Training
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: Cheout this repo
+      uses: actions/checkout@v2
+  
+    - name: checkout another repo
+      uses: actions/checkout@v2
+      with:
+        repository: arathipremkumar2408/test2
+        token: ${{secrets.GHPAT}}
+        path: other-repo
+  
+    - name: Set up python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Run Python script
+      run: |
+        cd other-repo
+        python second.py
