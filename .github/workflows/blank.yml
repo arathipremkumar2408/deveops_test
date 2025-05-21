@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: ["main"]
   workflow_dispatch:
+
     inputs: 
       environment:
         description: "Enivronment to testa against"
@@ -26,5 +27,6 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
+
       - run: echo ${{ inputs.environment }}
         
